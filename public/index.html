@@ -59,7 +59,7 @@
                     <v-list class="transparent">
                       <v-list-tile>
                         <v-list-tile-action>
-                          <v-icon class="blue--text text--lighten-2">store</v-icon>
+                          <v-icon class="red--text text--lighten-2">store</v-icon>
                         </v-list-tile-action>
                         <v-list-tile-content>
                           <v-list-tile-title><a href="https://techthetoaster.stores.jp" target="_blank" rel="noopener">Stores.jp（紙・電子書籍）で購入</a></v-list-tile-title>
@@ -69,7 +69,7 @@
                     <v-list class="transparent">
                       <v-list-tile>
                         <v-list-tile-action>
-                          <v-icon class="blue--text text--lighten-2">store</v-icon>
+                          <v-icon class="red--text text--lighten-2">store</v-icon>
                         </v-list-tile-action>
                         <v-list-tile-content>
                           <v-list-tile-title><a href="https://example.com" target="_blank" rel="noopener">BOOTH（電子書籍）で購入</a></v-list-tile-title>
@@ -99,7 +99,7 @@
                 <v-list class="transparent">
                   <v-list-tile>
                     <v-list-tile-action>
-                      <v-icon class="blue--text text--lighten-2">account_circle</v-icon>
+                      <v-icon class="red--text text--lighten-2">account_circle</v-icon>
                     </v-list-tile-action>
                     <v-list-tile-content>
                       <v-list-tile-title><a href="https://twitter.com/howdy39" target="_blank" rel="noopener">howdy39</a></v-list-tile-title>
@@ -107,7 +107,7 @@
                   </v-list-tile>
                   <v-list-tile>
                     <v-list-tile-action>
-                      <v-icon class="blue--text text--lighten-2">account_circle</v-icon>
+                      <v-icon class="red--text text--lighten-2">account_circle</v-icon>
                     </v-list-tile-action>
                     <v-list-tile-content>
                       <v-list-tile-title><a href="https://twitter.com/locol23" target="_blank" rel="noopener">locol23</a></v-list-tile-title>
@@ -127,7 +127,7 @@
                 <v-list class="transparent">
                   <v-list-tile>
                     <v-list-tile-action>
-                      <v-icon class="blue--text text--lighten-2">email</v-icon>
+                      <v-icon class="red--text text--lighten-2">email</v-icon>
                     </v-list-tile-action>
                     <v-list-tile-content>
                       <v-list-tile-title><a href="mailto:support@techthetoaster.org">support@techthetoaster.org</a></v-list-tile-title>
@@ -140,12 +140,12 @@
         </v-container>
       </section>
 
-      <v-footer class="blue darken-2">
+      <v-footer class="red darken-2">
         <v-layout row wrap align-center>
           <v-flex xs12>
             <div class="white--text ml-3">
               Made with
-              <v-icon class="red--text">favorite</v-icon>
+              <v-icon class="white--text">favorite</v-icon>
               by <a class="white--text" href="https://vuetifyjs.com" target="_blank">Vuetify</a>
             </div>
           </v-flex>
@@ -158,13 +158,23 @@
  <script src="https://unpkg.com/vuetify/dist/vuetify.js"></script>
  <script>
    new Vue({
-    el: '#app',
-    data () {
-      return {
-        title: 'Your Logo'
-      }
+     el: '#app',
+     data () {
+       return {
+         title: 'Tech The Toaster'
+       }
+     },
+     mounted: function(){
+       const theme = this.$vuetify.theme;
+       theme.primary = '#D32F2F';
+       theme.secondary = '#F4511E';
+       theme.accent = '#2979FF';
+       theme.error = '#f44336';
+       theme.warning = '#ffeb3b';
+       theme.info = '#2196f3';
+       theme.success = '#4caf50';
     }
-  })
+  });
  </script>
 </body>
 </html>
