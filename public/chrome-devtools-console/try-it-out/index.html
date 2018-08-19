@@ -1,13 +1,112 @@
-<!doctype html>
-<html lang="ja">
+<!DOCTYPE html>
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Try it out</title>
+    <title>Try it out | Chrome デベロッパーツールを使いこなそう Console 編</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons' rel="stylesheet">
+    <link href="https://unpkg.com/vuetify/dist/vuetify.min.css" rel="stylesheet">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-123763033-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-123763033-1');
+    </script>
 </head>
 <body>
-Try it outのページ
+<div id="app">
+    <v-app light>
+        <v-toolbar class="green">
+            <v-toolbar-title v-text="title" class="white--text"></v-toolbar-title>
+        </v-toolbar>
+        <v-content>
+            <v-form ref="form" v-model="valid">
+                <v-text-field v-model="id" :rules="nameRules" label="Id" required></v-text-field>
+                <v-text-field v-model="name" label="Name" required></v-text-field>
+                <v-text-field v-model="age" label="Age" required></v-text-field>
+                <v-text-field v-model="email" :rules="emailRules" label="Email" required></v-text-field>
+                <v-btn :disabled="!valid" @click="submit">
+                    submit
+                </v-btn>
+            </v-form>
+
+            <template>
+                <v-data-table
+                        :headers="headers"
+                        :items="users"
+                        hide-actions
+                        class="elevation-1"
+                >
+                    <template slot="items" slot-scope="props">
+                        <td>{{ props.item.id }}</td>
+                        <td>{{ props.item.name }}</td>
+                        <td class="text-xs-right">{{ props.item.age }}</td>
+                        <td>{{ props.item.email }}</td>
+                    </template>
+                </v-data-table>
+            </template>
+        </v-content>
+    </v-app>
+</div>
+<script src="https://unpkg.com/vue/dist/vue.js"></script>
+<script src="https://unpkg.com/vuetify/dist/vuetify.js"></script>
+<script>
+    new Vue({
+        el: '#app',
+        data () {
+            return {
+                title: 'Try it out',
+                valid: false,
+                id: '',
+                name: '',
+                nameRules: [
+                    v => !!v || 'Name is required',
+                    v => (v && v.length <= 10) || 'Name must be less than 10 characters'
+                ],
+                age: '',
+                email: '',
+                emailRules: [
+                    v => !!v || 'E-mail is required',
+                    v => /.+@.+/.test(v) || 'E-mail must be valid'
+                ],
+                headers: [
+                    {
+                        text: 'Id',
+                        align: 'left',
+                        sortable: false,
+                        value: 'id'
+                    },
+                    { text: 'Name', value: 'name' },
+                    { text: 'Age', align: 'right', value: 'age' },
+                    { text: 'Email', value: 'email' },
+                ],
+                users: [
+                    {
+                        id: 'U0001',
+                        name: '山田 太郎',
+                        email: 'taro.yamada@example.com',
+                        age: 42
+                    },
+                ]
+            }
+        },
+        methods: {
+            submit() {
+                if (this.$refs.form.validate()) {
+                    const user = {
+                            id: this.id,
+                            name: this.name,
+                            email: this.email,
+                            age: this.age
+                        };
+                    this.users.push(user);
+                }
+            },
+        }
+    });
+</script>
 </body>
 </html>
