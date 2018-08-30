@@ -37,38 +37,8 @@
         <v-container grid-list-md text-xs-center>
           <v-layout row wrap>
 
-            <v-flex md5>
-              <h2>登録画面</h2>
-              <v-form ref="form" v-model="valid">
-
-                <v-text-field
-                    v-model="id"
-                    :rules="idRules"
-                    label="Id"
-                    placeholder="U0001"
-                    required
-                >
-                </v-text-field>
-
-                <v-text-field
-                  v-model="name"
-                  :rules="nameRules"
-                  label="Name"
-                  placeholder="howdy39"
-                  required
-                >
-                </v-text-field>
-
-                <v-text-field v-model="age" label="Age" placeholder="32" required></v-text-field>
-                <v-text-field v-model="email" :rules="emailRules" label="Email" placeholder="howdy39@example.com" required></v-text-field>
-                <v-btn :disabled="!valid" @click="submit">
-                  submit
-                </v-btn>
-              </v-form>
-            </v-flex>
-
-            <v-flex md7>
-              <h2>一覧画面</h2>
+            <v-flex>
+              <h2>ユーザ 一覧</h2>
               <template>
                 <v-data-table
                   :headers="headers"
@@ -77,10 +47,10 @@
                   class="elevation-1"
                 >
                   <template slot="items" slot-scope="props">
-                    <td>{{ props.item.id }}</td>
-                    <td>{{ props.item.name }}</td>
-                    <td class="text-xs-right">{{ props.item.age }}</td>
-                    <td>{{ props.item.email }}</td>
+                    <td class="text-xs-left">{{ props.item.id }}</td>
+                    <td class="text-xs-left">{{ props.item.name }}</td>
+                    <td class="text-xs-left">{{ props.item.age }}</td>
+                    <td class="text-xs-left">{{ props.item.email }}</td>
                   </template>
                 </v-data-table>
               </template>
@@ -119,13 +89,19 @@
         headers: [
           {
             text: 'Id',
-            align: 'left',
-            sortable: false,
             value: 'id'
           },
-          {text: 'Name', align: 'left', value: 'name'},
-          {text: 'Age', align: 'right', value: 'age'},
-          {text: 'Email', align: 'left', value: 'email'},
+          {
+            text: 'Name',
+            value: 'name'
+          },
+          {
+            text: 'Age',
+            value: 'age'},
+          {
+            text: 'Email',
+            value: 'email'
+          },
         ],
         users: [
           {
@@ -140,6 +116,54 @@
             email: 'jiro.sato@example.com',
             age: 22
           },
+          {
+            id: 'U0003',
+            name: '藤根 大輔',
+            email: 'daisuke.fujine@example.com',
+            age: 18
+          },
+          {
+            id: 'U0004',
+            name: '居川 陽菜',
+            email: 'haruna.ikawa@example.com',
+            age: 34
+          },
+          {
+            id: 'U0005',
+            name: '浜中 葵',
+            email: 'aoi.hamanaka@example.com',
+            age: 35
+          },
+          {
+            id: 'U0006',
+            name: '安並 拓也',
+            email: 'takuya.yasunami@example.com',
+            age: 56
+          },
+          {
+            id: 'U0007',
+            name: '河原井 幸子',
+            email: 'sachiko.kawarai@example.com',
+            age: 24
+          },
+          {
+            id: 'U0008',
+            name: '菅井 勇',
+            email: 'isao.sugai@example.com',
+            age: 24
+          },
+          {
+            id: 'U0009',
+            name: '武安 颯太',
+            email: 'futa.takeyasu@example.com',
+            age: 82
+          },
+          {
+            id: 'U0010',
+            name: '菱沼 正',
+            email: 'tadasi.hishinuma@example.com',
+            age: 24
+          }
         ]
       }
     },
