@@ -19,6 +19,10 @@
     [v-cloak] {
       display: none
     }
+    .icon-image {
+      border-radius: 50%;
+      width: 36px;
+    }
   </style>
 </head>
 <body>
@@ -75,7 +79,7 @@
                     <v-divider light></v-divider>
                     <v-card-actions class="pa-3">
                       <v-icon class="red--text text--lighten-2">store</v-icon>
-                      <a href="https://techthetoaster.stores.jp" target="_blank" rel="noopener">Stores.jpで購入（紙・電子書籍）</a>
+                      <a href="https://techthetoaster.stores.jp" target="_blank" rel="noopener">Stores.jpで購入（書籍・電子書籍/PDF）</a>
                     </v-card-actions>
                   </v-card>
                 </v-flex>
@@ -100,7 +104,7 @@
                 <v-list class="transparent">
                   <v-list-tile>
                     <v-list-tile-action>
-                      <v-icon class="red--text text--lighten-2">account_circle</v-icon>
+                      <img src="http://www.paper-glasses.com/api/twipi/howdy39" class="icon-image"/>
                     </v-list-tile-action>
                     <v-list-tile-content>
                       <v-list-tile-title><a href="https://twitter.com/howdy39" target="_blank" rel="noopener">howdy39</a></v-list-tile-title>
@@ -108,7 +112,7 @@
                   </v-list-tile>
                   <v-list-tile>
                     <v-list-tile-action>
-                      <v-icon class="red--text text--lighten-2">account_circle</v-icon>
+                      <img src="http://www.paper-glasses.com/api/twipi/locol23" class="icon-image"/>
                     </v-list-tile-action>
                     <v-list-tile-content>
                       <v-list-tile-title><a href="https://twitter.com/locol23" target="_blank" rel="noopener">locol23</a></v-list-tile-title>
@@ -132,6 +136,14 @@
                     </v-list-tile-action>
                     <v-list-tile-content>
                       <v-list-tile-title><a href="mailto:support@techthetoaster.org">support@techthetoaster.org</a></v-list-tile-title>
+                    </v-list-tile-content>
+                  </v-list-tile>
+                  <v-list-tile>
+                    <v-list-tile-action>
+                      <img src="http://www.paper-glasses.com/api/twipi/howdy39" class="icon-image"/>
+                    </v-list-tile-action>
+                    <v-list-tile-content>
+                      <v-list-tile-title><a href="https://twitter.com/intent/tweet?text=@howdy39%20" target="_blank" rel="noopener">howdy39(Twitter)</a></v-list-tile-title>
                     </v-list-tile-content>
                   </v-list-tile>
                 </v-list>
