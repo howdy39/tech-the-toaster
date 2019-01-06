@@ -32,6 +32,12 @@
     gtag('config', 'UA-123763033-1');
   </script>
   <style>
+    ul {
+      padding: 0;
+    }
+    li {
+      list-style: none;
+    }
     [v-cloak] {
       display: none
     }
@@ -94,8 +100,14 @@
                     </v-layout>
                     <v-divider light></v-divider>
                     <v-card-actions class="pa-3">
-                      <v-icon class="red--text text--lighten-2">store</v-icon>
-                      <a href="https://techthetoaster.stores.jp" target="_blank" rel="noopener">Stores.jpで購入（書籍・電子書籍/PDF）</a>
+                      <ul>
+                        <li>
+                          <a href="https://techthetoaster.booth.pm/" target="_blank" rel="noopener">BOOTHで購入（書籍・電子書籍/PDF）</a>
+                        </li>
+                        <li>
+                          <a href="https://techthetoaster.stores.jp" target="_blank" rel="noopener">Stores.jpで購入（書籍・電子書籍/PDF）</a>
+                        </li>
+                      </ul>
                     </v-card-actions>
                   </v-card>
                 </v-flex>
