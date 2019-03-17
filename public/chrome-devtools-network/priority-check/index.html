@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>priority check</title>
+  <link rel="stylesheet" href="style.css?via=head">
+  <link rel="preload" href="style.css?via=head,preload" as="style">
+  <link rel="prefetch" href="style.css?via=head,prefetch" as="style">
+
+  <link rel="dns-prefetch" href="//howdy39.dev">
+  <link rel="preconnect" href="//howdy39.github.io">
+  <link rel="prefetch" href="prefetch.json">
+  <link rel="prerender" href="prerender.html">
+
+  <script src="script.js?via=head"></script>
+  <script src="script.js?via=head,async" async></script>
+  <script src="script.js?via=head,defer" defer></script>
+  <link rel="preload" href="script.js?via=head,preload" as="script">
+</head>
+<body>
+  <link rel="stylesheet" href="style.css?via=body">
+  <script src="script.js?via=body1"></script>
+  <div><img src="howdy39.jpeg?via=body1" alt="howdy39"/></div>
+  <script src="script.js?via=body2"></script>
+
+  <script src="script-for-css-load.js?via=body3"></script>
+
+  <script>
+    requestAnimationFrame(function(e) {
+      e = document.createElement('link');
+      e.rel = 'stylesheet';
+      e.href = 'style.css?via=body,inline-script,requestAnimationFrame';
+      document.head.appendChild(e);
+    });
+    const e = document.createElement('link');
+    e.rel = 'stylesheet';
+    e.href = 'style.css?via=body,inline-script';
+    document.head.appendChild(e);
+  </script>
+</body>
+</html>
