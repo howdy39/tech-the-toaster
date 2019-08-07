@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Force State</title>
+  <style>
+    .a1:active:after {
+      content: ">avtive";
+    }
+
+    .a2:hover:after {
+      content: ">hover";
+    }
+
+    .a3:focus:after {
+      content: ">focus";
+    }
+
+    .a4:visited {
+      color: green;
+    }
+    .a4:visited:after {
+      content: ">visited";
+    }
+
+    .a5:focus-within:after {
+      content: ">focus-within";
+    }
+
+  </style>
+</head>
+<body>
+<ul>
+  <li><a class="a1" href="https://techthetoaster.org">activeの確認</a></li>
+  <li><a class="a2" href="https://techthetoaster.org">hoverの確認</a></li>
+  <li><a class="a3" href="https://techthetoaster.org">focusの確認</a></li>
+  <li><a class="a4" href="https://techthetoaster.org">visitedの確認</a></li>
+  <li><div class="a5">xxx<a href="https://techthetoaster.org">focus-withinの確認</a>xxx</div></li>
+</ul>
+</body>
+</html>
