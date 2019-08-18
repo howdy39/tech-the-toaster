@@ -1,0 +1,11 @@
+.ancestor {
+  font-size: 28px;
+}
+.parent {
+  font-size: 24px;
+}
+.hoge {
+  font-size: 20px;
+  pading: 3px;
+  margin: 2px 4px;
+}
