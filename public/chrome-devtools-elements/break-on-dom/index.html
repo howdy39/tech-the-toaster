@@ -7,6 +7,14 @@
   <title>Break on DOM</title>
 </head>
 <body>
-  <div class="hoge">text</div>
+  <div class="target">
+    <div class="child">DOMの変更検証用</div>
+  </div>
+  <ul>
+    <li><button type="button" class="button1">子要素の変更（subtree modifications）</button></li>
+    <li><button type="button" class="button2">属性変更（attribute modifications）</button></li>
+    <li><button type="button" class="button3">要素削除（node removal）</button></li>
+  </ul>
+  <script src="script.js"></script>
 </body>
 </html>
