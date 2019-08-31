@@ -8,7 +8,7 @@ document.querySelector('.button2').addEventListener('click', () => {
 
 });
 
-document.querySelector('.button3').addEventListener('click', (e) => {
+document.querySelector('.button3').addEventListener('click', () => {
   const element = document.querySelector('.target');
   element.parentElement.removeChild(element);
 });
