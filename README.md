@@ -20,5 +20,5 @@ https://optimize.google.com/optimize/home/#/accounts/4703373387/containers/13648
 
 ## Development
 ```
-$live-server public
+npx live-server public
 ```
